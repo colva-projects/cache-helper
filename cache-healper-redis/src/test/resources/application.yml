@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: colva
+  redis:
+    host: 
+    port: 6379
+    password: 
+    timeout: 5000
+colva: 
+  cache-helper: 
+    redis: 
+      loading-cache-maximum-size: 512
+      loading-cache-concurrency-level: 8
+      loading-cache-expire-after-write: 500
+cache-support: 
+  config: 
+    timeout: 
+      cacheable: 15
