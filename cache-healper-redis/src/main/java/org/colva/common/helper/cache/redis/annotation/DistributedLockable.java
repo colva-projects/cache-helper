@@ -9,7 +9,7 @@ import java.lang.annotation.Target;
 /**
  * 分布式锁
  * 
- * @description 
+ * @description
  * @author piaoruiqing
  * @date: 2019/01/07 15:54
  *
@@ -23,32 +23,35 @@ public @interface DistributedLockable {
     /**
      * 超时时间 <br/>
      * 单位: s
+     * 
      * @author piaoruiqing
      * @date: 2019/01/07 16:13
      * 
      * @return
      */
     long timeout() default 5L;
-    
+
     /**
      * 重试次数
+     * 
      * @author piaoruiqing
      * @date: 2019/01/07 16:13
      * 
      * @return
      */
     int retries() default 0;
-    
+
     /**
      * 重试等待时间<br/>
      * 单位: ms
+     * 
      * @author piaoruiqing
      * @date: 2019/01/07 16:13
      * 
      * @return
      */
     long waitingTime() default 0L;
-    
+
     /**
      * 自定义KEY<br/>
      * 默认使用包路径
@@ -59,7 +62,7 @@ public @interface DistributedLockable {
      * @return
      */
     String prefix() default "";
-    
+
     /**
      * 参数列表<br/>
      * 默认全部参数
@@ -70,7 +73,7 @@ public @interface DistributedLockable {
      * @return
      */
     String[] argNames() default {};
-    
+
     /**
      * 关注目标方法参数<br/>
      * 设置为false时, 粒度较大, 相同方法不同参数也为同一把锁
@@ -81,7 +84,7 @@ public @interface DistributedLockable {
      * @return
      */
     boolean argsAssociated() default true;
-    
+
     /**
      * 自动解锁<br/>
      * 方法执行完毕后自动删除key
@@ -92,5 +95,5 @@ public @interface DistributedLockable {
      * @return
      */
     boolean autoUnlock() default true;
-    
+
 }
