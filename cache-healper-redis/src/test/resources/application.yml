@@ -2,7 +2,7 @@ spring:
   application:
     name: colva
   redis:
-    host: 
+    host: redis-server
     port: 6379
     password: 
     timeout: 5000
